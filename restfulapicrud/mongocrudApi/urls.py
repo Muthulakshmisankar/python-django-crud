@@ -2,6 +2,7 @@ from django.urls import path
 from mongocrudApi import views
 
 urlpatterns = [
-    path('', views.NoteList.as_view()),
-    path('<int:pk>/', views.NoteDetail.as_view())
+    path('', views.MyMongoListCreateView.as_view()),
+    path('<int:pk>/', views.MyMongoRetrieveUpdateDestroyView.as_view()),
+        path('<int:pk>/', views.UpdateView.as_view() , name='mymongo-update')
 ]

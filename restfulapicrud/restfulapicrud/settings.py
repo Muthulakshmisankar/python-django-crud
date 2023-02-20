@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
+from mongocrudApi import mongoDbRouter
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -73,12 +75,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'restfulapicrud.wsgi.application'
 
+# DATABASE_ROUTERS = [mongoDbRouter]
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default_old': {
+    'default_db': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'employee_sample',
         'USER': 'postgres',
@@ -87,10 +90,11 @@ DATABASES = {
     },
     'default':{
     'ENGINE': 'djongo',
-    'NAME': 'mydb',
-    'HOST': 'mongodb://localhost:27017/',
+    'NAME': 'lakshmi_db',
+    'HOST': 'mongodb://localhost:27017'
     }
 }
+
 
 
 # Password validation
